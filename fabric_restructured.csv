@@ -1,0 +1,66 @@
+Fabric Name,Fabric Type,Durability,Texture,Best Use
+Wool,Natural Fiber,High,Rough,Winter
+Wool,Natural Fiber,High,Rough,coats
+Wool,Natural Fiber,High,Rough,sweaters
+Wool,Natural Fiber,High,Rough,suits
+Cashmere,Natural Fiber,Moderate,Soft,Luxury
+Cashmere,Natural Fiber,Moderate,Soft,scarves
+Cashmere,Natural Fiber,Moderate,Soft,sweaters
+Cashmere,Natural Fiber,Moderate,Soft,coats
+Cotton,Natural Fiber,Moderate,Smooth,Everyday
+Cotton,Natural Fiber,Moderate,Smooth,wear
+Cotton,Natural Fiber,Moderate,Smooth,t-shirts
+Cotton,Natural Fiber,Moderate,Smooth,dresses
+Linen,Natural Fiber,Low,Smooth,Summer-shirts
+Linen,Natural Fiber,Low,Smooth,tablecloths
+Silk,Natural Fiber,Low,Soft,Evening-gowns
+Silk,Natural Fiber,Low,Soft,ties
+Silk,Natural Fiber,Low,Soft,luxury
+Silk,Natural Fiber,Low,Soft,bedding
+Polyester,Synthetic Fiber,High,Smooth,Sportswear
+Polyester,Synthetic Fiber,High,Smooth,outerwear
+Polyester,Synthetic Fiber,High,Smooth,upholstery
+Tweed,Natural Fiber,High,Rough,Jackets
+Tweed,Natural Fiber,High,Rough,blazers
+Tweed,Natural Fiber,High,Rough,skirts
+Denim,Natural Fiber Blend,High,Rough,Jeans
+Denim,Natural Fiber Blend,High,Rough,jackets
+Denim,Natural Fiber Blend,High,Rough,casual
+Rayon,Semi-Synthetic Fiber,Low,Smooth,Dresses
+Rayon,Semi-Synthetic Fiber,Low,Smooth,blouses
+Rayon,Semi-Synthetic Fiber,Low,Smooth,linings
+Satin,Synthetic Fiber,Low,Smooth,evening-wear
+Satin,Synthetic Fiber,Low,Smooth,lingerie
+Satin,Synthetic Fiber,Low,Smooth,upholstery
+Velvet,Natural/Synthetic,Moderate,Soft,Party
+Velvet,Natural/Synthetic,Moderate,Soft,dresses
+Velvet,Natural/Synthetic,Moderate,Soft,curtains
+Velvet,Natural/Synthetic,Moderate,Soft,upholstery
+Leather,Natural/Synthetic,High,Smooth,Jackets
+Leather,Natural/Synthetic,High,Smooth,shoes
+Leather,Natural/Synthetic,High,Smooth,bags
+Chiffon,Synthetic Fiber,Low,Soft,Evening-dresses
+Chiffon,Synthetic Fiber,Low,Soft,blouses
+Chiffon,Synthetic Fiber,Low,Soft,scarves
+Organza,Synthetic Fiber,Low,Smooth,Bridal
+Organza,Synthetic Fiber,Low,Smooth,evening-gowns
+Organza,Synthetic Fiber,Low,Smooth,decor
+Fleece,Synthetic Fiber,High,Soft,Blankets
+Fleece,Synthetic Fiber,High,Soft,jackets
+Fleece,Synthetic Fiber,High,Soft,winter
+Canvas,Natural Fiber Blend,High,Rough,Bags
+Canvas,Natural Fiber Blend,High,Rough,tents
+Canvas,Natural Fiber Blend,High,Rough,durable
+Spandex,Synthetic Fiber,High,Smooth,Activewear
+Spandex,Synthetic Fiber,High,Smooth,swimwear
+Spandex,Synthetic Fiber,High,Smooth,stretch
+Georgette,Synthetic Fiber,Low,Smooth,Dresses
+Georgette,Synthetic Fiber,Low,Smooth,tops
+Georgette,Synthetic Fiber,Low,Smooth,scarves
+Nylon,Synthetic Fiber,High,Smooth,Sportswear
+Nylon,Synthetic Fiber,High,Smooth,hosiery
+Nylon,Synthetic Fiber,High,Smooth,umbrellas
+Jute,Natural Fiber,High,Rough,Eco-friendly
+Jute,Natural Fiber,High,Rough,bags
+Jute,Natural Fiber,High,Rough,rugs
+Jute,Natural Fiber,High,Rough,mats

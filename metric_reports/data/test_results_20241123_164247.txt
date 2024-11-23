@@ -1,0 +1,240 @@
+Fabric Predictor Model Evaluation Results (Rule-Based + Neural Network)
+Test Date: 2024-11-23 16:47:49
+======================================================================
+
+Individual Predictions:
+----------------------------------------------------------------------
+Best Use             Durability Texture    Actual          Predicted       Match      Rule-Based      Neural Net     
+--------------------------------------------------------------------------------------------------------------
+Winter               High       Rough      Wool            Wool            [CORRECT]  [✓]             [✓]            
+coats                High       Rough      Wool            Wool            [CORRECT]  [✓]             [✓]            
+sweaters             High       Rough      Wool            Wool            [CORRECT]  [✓]             [✓]            
+suits                High       Rough      Wool            Wool            [CORRECT]  [✓]             [✓]            
+Luxury               Moderate   Soft       Cashmere        Cashmere        [CORRECT]  [✓]             [✓]            
+scarves              Moderate   Soft       Cashmere        Cashmere        [CORRECT]  [✓]             [✓]            
+sweaters             Moderate   Soft       Cashmere        Cashmere        [CORRECT]  [✓]             [✓]            
+coats                Moderate   Soft       Cashmere        Cashmere        [CORRECT]  [✓]             [✓]            
+Everyday             Moderate   Smooth     Cotton          Cotton          [CORRECT]  [✓]             [✓]            
+wear                 Moderate   Smooth     Cotton          Cotton          [CORRECT]  [✓]             [✓]            
+t-shirts             Moderate   Smooth     Cotton          Cotton          [CORRECT]  [✓]             [✓]            
+dresses              Moderate   Smooth     Cotton          Cotton          [CORRECT]  [✓]             [✓]            
+Summer-shirts        Low        Smooth     Linen           Linen           [CORRECT]  [✓]             [✓]            
+tablecloths          Low        Smooth     Linen           Linen           [CORRECT]  [✗]             [✓]            
+Evening-gowns        Low        Soft       Silk            Silk            [CORRECT]  [✓]             [✓]            
+ties                 Low        Soft       Silk            Silk            [CORRECT]  [✓]             [✓]            
+luxury               Low        Soft       Silk            Silk            [CORRECT]  [✓]             [✓]            
+bedding              Low        Soft       Silk            Silk            [CORRECT]  [✓]             [✓]            
+Sportswear           High       Smooth     Polyester       Nylon           [WRONG]    [✗]             [✗]            
+outerwear            High       Smooth     Polyester       Polyester       [CORRECT]  [✓]             [✓]            
+upholstery           High       Smooth     Polyester       Polyester       [CORRECT]  [✓]             [✓]            
+Jackets              High       Rough      Tweed           Tweed           [CORRECT]  [✓]             [✓]            
+blazers              High       Rough      Tweed           Tweed           [CORRECT]  [✓]             [✓]            
+skirts               High       Rough      Tweed           Tweed           [CORRECT]  [✓]             [✓]            
+Jeans                High       Rough      Denim           Denim           [CORRECT]  [✓]             [✓]            
+jackets              High       Rough      Denim           Denim           [CORRECT]  [✓]             [✓]            
+casual               High       Rough      Denim           Denim           [CORRECT]  [✓]             [✓]            
+Dresses              Low        Smooth     Rayon           Georgette       [WRONG]    [✗]             [✗]            
+blouses              Low        Smooth     Rayon           Rayon           [CORRECT]  [✗]             [✓]            
+linings              Low        Smooth     Rayon           Rayon           [CORRECT]  [✗]             [✓]            
+evening-wear         Low        Smooth     Satin           Satin           [CORRECT]  [✓]             [✓]            
+lingerie             Low        Smooth     Satin           Satin           [CORRECT]  [✓]             [✓]            
+upholstery           Low        Smooth     Satin           Satin           [CORRECT]  [✓]             [✓]            
+Party                Moderate   Soft       Velvet          Velvet          [CORRECT]  [✓]             [✓]            
+dresses              Moderate   Soft       Velvet          Velvet          [CORRECT]  [✓]             [✓]            
+curtains             Moderate   Soft       Velvet          Velvet          [CORRECT]  [✓]             [✓]            
+upholstery           Moderate   Soft       Velvet          Velvet          [CORRECT]  [✓]             [✓]            
+Jackets              High       Smooth     Leather         Leather         [CORRECT]  [✓]             [✓]            
+shoes                High       Smooth     Leather         Leather         [CORRECT]  [✓]             [✓]            
+bags                 High       Smooth     Leather         Leather         [CORRECT]  [✓]             [✓]            
+Evening-dresses      Low        Soft       Chiffon         Chiffon         [CORRECT]  [✓]             [✓]            
+blouses              Low        Soft       Chiffon         Chiffon         [CORRECT]  [✓]             [✓]            
+scarves              Low        Soft       Chiffon         Chiffon         [CORRECT]  [✓]             [✓]            
+Bridal               Low        Smooth     Organza         Organza         [CORRECT]  [✓]             [✓]            
+evening-gowns        Low        Smooth     Organza         Organza         [CORRECT]  [✓]             [✓]            
+decor                Low        Smooth     Organza         Organza         [CORRECT]  [✓]             [✓]            
+Blankets             High       Soft       Fleece          Fleece          [CORRECT]  [✓]             [✓]            
+jackets              High       Soft       Fleece          Fleece          [CORRECT]  [✓]             [✓]            
+winter               High       Soft       Fleece          Fleece          [CORRECT]  [✓]             [✓]            
+Bags                 High       Rough      Canvas          Canvas          [CORRECT]  [✓]             [✓]            
+tents                High       Rough      Canvas          Canvas          [CORRECT]  [✓]             [✓]            
+durable              High       Rough      Canvas          Canvas          [CORRECT]  [✓]             [✓]            
+Activewear           High       Smooth     Spandex         Spandex         [CORRECT]  [✓]             [✓]            
+swimwear             High       Smooth     Spandex         Spandex         [CORRECT]  [✓]             [✓]            
+stretch              High       Smooth     Spandex         Spandex         [CORRECT]  [✓]             [✓]            
+Dresses              Low        Smooth     Georgette       Georgette       [CORRECT]  [✗]             [✓]            
+tops                 Low        Smooth     Georgette       Georgette       [CORRECT]  [✗]             [✓]            
+scarves              Low        Smooth     Georgette       Georgette       [CORRECT]  [✗]             [✓]            
+Sportswear           High       Smooth     Nylon           Nylon           [CORRECT]  [✓]             [✓]            
+hosiery              High       Smooth     Nylon           Nylon           [CORRECT]  [✓]             [✓]            
+umbrellas            High       Smooth     Nylon           Nylon           [CORRECT]  [✓]             [✓]            
+Eco-friendly         High       Rough      Jute            Jute            [CORRECT]  [✗]             [✓]            
+bags                 High       Rough      Jute            Jute            [CORRECT]  [✗]             [✓]            
+rugs                 High       Rough      Jute            Jute            [CORRECT]  [✗]             [✓]            
+mats                 High       Rough      Jute            Jute            [CORRECT]  [✗]             [✓]            
+
+Model Performance Comparison:
+----------------------------------------------------------------------
+Rule-Based Accuracy: 81.54%
+Neural Network Accuracy: 96.92%
+Ensemble Accuracy: 96.92%
+
+
+Summary Statistics:
+----------------------------------------------------------------------
+Total Samples: 65
+Correct Predictions: 63
+Incorrect Predictions: 2
+Final Accuracy: 96.92%
+
+
+Detailed Classification Report:
+----------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+      Canvas       1.00      1.00      1.00         3
+    Cashmere       1.00      1.00      1.00         4
+     Chiffon       1.00      1.00      1.00         3
+      Cotton       1.00      1.00      1.00         4
+       Denim       1.00      1.00      1.00         3
+      Fleece       1.00      1.00      1.00         3
+   Georgette       0.75      1.00      0.86         3
+        Jute       1.00      1.00      1.00         4
+     Leather       1.00      1.00      1.00         3
+       Linen       1.00      1.00      1.00         2
+       Nylon       0.75      1.00      0.86         3
+     Organza       1.00      1.00      1.00         3
+   Polyester       1.00      0.67      0.80         3
+       Rayon       1.00      0.67      0.80         3
+       Satin       1.00      1.00      1.00         3
+        Silk       1.00      1.00      1.00         4
+     Spandex       1.00      1.00      1.00         3
+       Tweed       1.00      1.00      1.00         3
+      Velvet       1.00      1.00      1.00         4
+        Wool       1.00      1.00      1.00         4
+
+    accuracy                           0.97        65
+   macro avg       0.97      0.97      0.97        65
+weighted avg       0.98      0.97      0.97        65
+
+Overall Metrics:
+----------------------------------------------------------------------
+Accuracy:  0.969
+Precision: 0.977
+Recall:    0.969
+F1-Score:  0.968
+
+Performance Analysis by Category:
+----------------------------------------------------------------------
+
+Durability-based Performance:
+High: 96.88%
+Moderate: 100.00%
+Low: 95.24%
+
+Texture-based Performance:
+Rough: 100.00%
+Soft: 100.00%
+Smooth: 93.33%
+
+Per-Class Performance:
+----------------------------------------------------------------------
+
+Canvas:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Cashmere:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Chiffon:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Cotton:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Denim:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Fleece:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Georgette:
+  Precision: 0.750
+  Recall:    1.000
+  F1-Score:  0.857
+
+Jute:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Leather:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Linen:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Nylon:
+  Precision: 0.750
+  Recall:    1.000
+  F1-Score:  0.857
+
+Organza:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Polyester:
+  Precision: 1.000
+  Recall:    0.667
+  F1-Score:  0.800
+
+Rayon:
+  Precision: 1.000
+  Recall:    0.667
+  F1-Score:  0.800
+
+Satin:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Silk:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Spandex:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Tweed:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Velvet:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000
+
+Wool:
+  Precision: 1.000
+  Recall:    1.000
+  F1-Score:  1.000

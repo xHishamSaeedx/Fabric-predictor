@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fabric Recommender</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        min-height: 100px;
+        font-size: 16px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        display: none;
+      }
+      .result-item {
+        margin-bottom: 10px;
+      }
+      .result-label {
+        font-weight: bold;
+        color: #333;
+      }
+      .loading {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .file-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white;
+      }
+      #imagePreviewContainer {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fabric Recommender</h1>
+      <div class="form-group">
+        <label for="prompt">Describe what you want to make:</label>
+        <textarea
+          id="prompt"
+          placeholder="Example: I want to make a comfortable summer dress for a beach party"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="image">Upload an image (optional):</label>
+        <input type="file" id="image" accept="image/*" class="file-input" />
+      </div>
+      <div class="form-group" id="imagePreviewContainer" style="display: none">
+        <label>Image Preview:</label>
+        <img
+          id="imagePreview"
+          style="max-width: 100%; margin-top: 10px; border-radius: 5px"
+        />
+      </div>
+      <button onclick="getFabricRecommendation()">Get Recommendation</button>
+
+      <div class="loading" id="loading">Processing your request...</div>
+
+      <div id="result">
+        <div class="result-item">
+          <span class="result-label">Recommended Fabric:</span>
+          <span id="fabricName"></span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Fabric Type:</span>
+          <span id="fabricType"></span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Recommendation:</span>
+          <p id="recommendation"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Add image resizing function
+      function resizeImage(file) {
+        return new Promise((resolve) => {
+          const maxWidth = 800; // Maximum width for the image
+          const maxHeight = 800; // Maximum height for the image
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const img = new Image();
+            img.onload = function () {
+              const canvas = document.createElement("canvas");
+              let width = img.width;
+              let height = img.height;
+
+              // Calculate new dimensions
+              if (width > height) {
+                if (width > maxWidth) {
+                  height = Math.round((height * maxWidth) / width);
+                  width = maxWidth;
+                }
+              } else {
+                if (height > maxHeight) {
+                  width = Math.round((width * maxHeight) / height);
+                  height = maxHeight;
+                }
+              }
+
+              canvas.width = width;
+              canvas.height = height;
+
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, width, height);
+
+              // Get the resized image as base64 string
+              const resizedDataUrl = canvas.toDataURL("image/jpeg", 0.7); // 0.7 is the quality (0-1)
+              resolve(resizedDataUrl);
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Update the image change event listener
+      document
+        .getElementById("image")
+        .addEventListener("change", async function (event) {
+          const file = event.target.files[0];
+          const previewContainer = document.getElementById(
+            "imagePreviewContainer"
+          );
+          const preview = document.getElementById("imagePreview");
+
+          if (file) {
+            try {
+              const resizedImage = await resizeImage(file);
+              preview.src = resizedImage;
+              previewContainer.style.display = "block";
+            } catch (error) {
+              console.error("Error resizing image:", error);
+              alert("Error processing image");
+            }
+          } else {
+            previewContainer.style.display = "none";
+            preview.src = "";
+          }
+        });
+
+      // Update the getFabricRecommendation function
+      async function getFabricRecommendation() {
+        const prompt = document.getElementById("prompt").value;
+        const imageFile = document.getElementById("image").files[0];
+        const loading = document.getElementById("loading");
+        const result = document.getElementById("result");
+
+        if (!prompt) {
+          alert("Please enter a description");
+          return;
+        }
+
+        loading.style.display = "block";
+        result.style.display = "none";
+
+        try {
+          let response;
+
+          if (imageFile) {
+            // Handle case with image
+            const formData = new FormData();
+            formData.append("prompt", prompt);
+
+            try {
+              const resizedImage = await resizeImage(imageFile);
+              const response = await fetch(resizedImage);
+              const blob = await response.blob();
+              formData.append("image", blob, imageFile.name);
+            } catch (error) {
+              console.error("Error processing image:", error);
+              alert("Error processing image");
+              loading.style.display = "none";
+              return;
+            }
+
+            response = await fetch(
+              "http://127.0.0.1:8000/fabric-recommendation-with-image",
+              {
+                method: "POST",
+                body: formData,
+              }
+            );
+          } else {
+            // Handle text-only case - now sending prompt instead of text
+            const requestData = { prompt: prompt };
+            console.log("Sending request data:", requestData);
+
+            response = await fetch(
+              "http://127.0.0.1:8000/fabric-recommendation",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(requestData),
+              }
+            );
+          }
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          document.getElementById("fabricName").textContent =
+            data.fabric_name || "";
+          document.getElementById("fabricType").textContent =
+            data.fabric_type || "";
+          document.getElementById("recommendation").textContent =
+            data.recommendation || "";
+
+          result.style.display = "block";
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Error getting recommendation: " + error.message);
+        } finally {
+          loading.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
